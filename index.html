@@ -1,77 +1,178 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Web Experiments</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development Portfolio - Likhith B A</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    :root {
+      --primary-color: #4CAF50;
+      --primary-dark: #2E7D32;
+      --secondary-color: #3F51B5;
+      --secondary-dark: #303F9F;
+      --react-color: #61DAFB;
+      --react-dark: #282c34;
+      --light-gray: #f4f4f9;
+      --dark-gray: #333;
+      --white: #fff;
+      --shadow: 0 4px 8px rgba(0,0,0,0.1);
+      --shadow-hover: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f4f4f9;
-      color: #333;
+      box-sizing: border-box;
     }
     
-    header {
-      background-color: #4CAF50;
-      color: white;
-      padding: 1.5rem;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-gray);
+      color: var(--dark-gray);
+      line-height: 1.6;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      padding: 2rem 1rem;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
     }
     
-    h1 {
-      margin: 0;
-      font-size: 2.2rem;
+    .header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+      background-size: cover;
+      opacity: 0.3;
+    }
+    
+    .profile {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .title {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     }
     
     .subtitle {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-      font-weight: normal;
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
       opacity: 0.9;
     }
     
+    .student-info {
+      background-color: rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 1rem;
+      display: inline-block;
+      margin-top: 1rem;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    
+    .student-info p {
+      font-size: 1.1rem;
+      margin: 0.3rem 0;
+      font-weight: 500;
+    }
+    
     .container {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 2rem auto;
       padding: 0 1rem;
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary-color);
+      color: var(--primary-dark);
     }
     
     .experiments-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 1.5rem;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
     }
     
     .experiment-card {
-      background-color: white;
+      background-color: var(--white);
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: var(--shadow);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
     
     .experiment-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      box-shadow: var(--shadow-hover);
     }
     
     .card-header {
-      background-color: #4CAF50;
-      color: white;
+      background-color: var(--primary-color);
+      color: var(--white);
       padding: 1rem;
       font-size: 1.2rem;
       font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    
+    .exp-number {
+      background-color: var(--white);
+      color: var(--primary-dark);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    
+    .js-card .card-header {
+      background-color: var(--secondary-color);
+      color: var(--white);
+    }
+    
+    .js-card .exp-number {
+      color: var(--secondary-dark);
     }
     
     .react-card .card-header {
-      background-color: #61DAFB;
-      color: #282c34;
+      background-color: var(--react-color);
+      color: var(--react-dark);
+    }
+    
+    .react-card .exp-number {
+      color: var(--react-dark);
+      background-color: var(--white);
     }
     
     .card-body {
       padding: 1rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
     
     .question-link {
@@ -80,13 +181,21 @@
       margin: 0.5rem 0;
       background-color: #f5f5f5;
       border-radius: 4px;
-      color: #333;
+      color: var(--dark-gray);
       text-decoration: none;
       transition: background-color 0.2s ease;
     }
     
     .question-link:hover {
       background-color: #e0e0e0;
+    }
+    
+    .js-card .question-link {
+      background-color: #eef1ff;
+    }
+    
+    .js-card .question-link:hover {
+      background-color: #dde4ff;
     }
     
     .react-card .question-link {
@@ -97,39 +206,69 @@
       background-color: #e0f0ff;
     }
     
-    .react-icon {
+    .icon {
       display: inline-block;
       margin-right: 5px;
-      color: #61DAFB;
       font-weight: bold;
+    }
+    
+    .date-info {
+      text-align: right;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 2rem;
+      font-style: italic;
     }
     
     footer {
       text-align: center;
       padding: 1.5rem;
       margin-top: 2rem;
-      background-color: #f0f0f0;
-      color: #666;
+      background-color: var(--primary-dark);
+      color: var(--white);
     }
     
     @media (max-width: 768px) {
       .experiments-grid {
         grid-template-columns: 1fr;
       }
+      
+      .title {
+        font-size: 2rem;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>My Web Experiments</h1>
-    <div class="subtitle">A collection of web development exercises and solutions</div>
+  <header class="header">
+    <div class="profile">
+      <h1 class="title">Web Development Portfolio</h1>
+      <p class="subtitle">A collection of web development experiments and projects</p>
+      
+      <div class="student-info">
+        <p><strong>Name:</strong> Likhith B A</p>
+        <p><strong>Reg No:</strong> 23BCE1098</p>
+      </div>
+    </div>
   </header>
   
   <div class="container">
+    <div class="date-info">
+      Last Updated: Sunday, April 13, 2025, 5:57 PM IST
+    </div>
+    
+    <h2 class="section-title">HTML & CSS Experiments</h2>
     <div class="experiments-grid">
       <!-- Experiment 1 -->
       <div class="experiment-card">
-        <div class="card-header">Experiment 1</div>
+        <div class="card-header">
+          <span class="exp-number">01</span>
+          HTML INTRODUCTION
+        </div>
         <div class="card-body">
           <a href="Ex1/Task1/home.html" class="question-link">Task 1</a>
           <a href="Ex1/Task2/greeting.html" class="question-link">Task 2</a>
@@ -138,7 +277,10 @@
       
       <!-- Experiment 2 -->
       <div class="experiment-card">
-        <div class="card-header">Experiment 2</div>
+        <div class="card-header">
+          <span class="exp-number">02</span>
+          HTML Tables And Lists
+        </div>
         <div class="card-body">
           <a href="Ex2/List.html" class="question-link">List</a>
           <a href="Ex2/Table1.html" class="question-link">Table 1</a>
@@ -150,7 +292,10 @@
       
       <!-- Experiment 3 -->
       <div class="experiment-card">
-        <div class="card-header">Experiment 3</div>
+        <div class="card-header">
+          <span class="exp-number">03</span>
+          HTML Image Mapping
+        </div>
         <div class="card-body">
           <a href="Ex3/question1.html" class="question-link">Question 1</a>
           <a href="Ex3/question2.html" class="question-link">Question 2</a>
@@ -159,7 +304,10 @@
       
       <!-- Experiment 4 -->
       <div class="experiment-card">
-        <div class="card-header">Experiment 4</div>
+        <div class="card-header">
+          <span class="exp-number">04</span>
+          HTML Forms
+        </div>
         <div class="card-body">
           <a href="Ex4/question1.html" class="question-link">Question 1</a>
           <a href="Ex4/question2.html" class="question-link">Question 2</a>
@@ -169,7 +317,10 @@
       
       <!-- Experiment 5 -->
       <div class="experiment-card">
-        <div class="card-header">Experiment 5</div>
+        <div class="card-header">
+          <span class="exp-number">05</span>
+          HTML Semantic tags, Frames and Media Elements
+        </div>
         <div class="card-body">
           <a href="Ex5/question1/question1.html" class="question-link">Question 1</a>
           <a href="Ex5/question2/question2.html" class="question-link">Question 2</a>
@@ -178,7 +329,10 @@
       
       <!-- Experiment 6 -->
       <div class="experiment-card">
-        <div class="card-header">Experiment 6</div>
+        <div class="card-header">
+          <span class="exp-number">06</span>
+          Cascading Style Sheets (CSS)
+        </div>
         <div class="card-body">
           <a href="Ex6/question1.html" class="question-link">Question 1</a>
           <a href="Ex6/question2.html" class="question-link">Question 2</a>
@@ -188,16 +342,25 @@
       
       <!-- Experiment 7 -->
       <div class="experiment-card">
-        <div class="card-header">Experiment 7</div>
+        <div class="card-header">
+          <span class="exp-number">07</span>
+          Cascading Style Sheets (CSS)
+        </div>
         <div class="card-body">
           <a href="Ex7/question1.html" class="question-link">Question 1</a>
           <a href="Ex7/question2.html" class="question-link">Question 2</a>
         </div>
       </div>
-      
+    </div>
+    
+    <h2 class="section-title">JavaScript Experiments</h2>
+    <div class="experiments-grid">
       <!-- Experiment 8 -->
-      <div class="experiment-card">
-        <div class="card-header">Experiment 8</div>
+      <div class="experiment-card js-card">
+        <div class="card-header">
+          <span class="exp-number">08</span>
+          JavaScript
+        </div>
         <div class="card-body">
           <a href="Ex8/Question1.html" class="question-link">Question 1</a>
           <a href="Ex8/Question2.html" class="question-link">Question 2</a>
@@ -209,8 +372,11 @@
       </div>
       
       <!-- Experiment 9 -->
-      <div class="experiment-card">
-        <div class="card-header">Experiment 9</div>
+      <div class="experiment-card js-card">
+        <div class="card-header">
+          <span class="exp-number">09</span>
+          JavaScript
+        </div>
         <div class="card-body">
           <a href="Ex9/question1.html" class="question-link">Question 1</a>
           <a href="Ex9/question2.html" class="question-link">Question 2</a>
@@ -219,8 +385,11 @@
       </div>
       
       <!-- Experiment 10 -->
-      <div class="experiment-card">
-        <div class="card-header">Experiment 10</div>
+      <div class="experiment-card js-card">
+        <div class="card-header">
+          <span class="exp-number">10</span>
+          JavaScript
+        </div>
         <div class="card-body">
           <a href="Ex10/question1.html" class="question-link">Question 1</a>
           <a href="Ex10/question2.html" class="question-link">Question 2</a>
@@ -229,8 +398,11 @@
       </div>
       
       <!-- Experiment 11 -->
-      <div class="experiment-card">
-        <div class="card-header">Experiment 11</div>
+      <div class="experiment-card js-card">
+        <div class="card-header">
+          <span class="exp-number">11</span>
+          JavaScript DOM
+        </div>
         <div class="card-body">
           <a href="Ex11/question1.html" class="question-link">Question 1</a>
           <a href="Ex11/question2.html" class="question-link">Question 2</a>
@@ -239,8 +411,11 @@
       </div>
       
       <!-- Experiment 12 -->
-      <div class="experiment-card">
-        <div class="card-header">Experiment 12</div>
+      <div class="experiment-card js-card">
+        <div class="card-header">
+          <span class="exp-number">12</span>
+          JavaScript
+        </div>
         <div class="card-body">
           <a href="Ex12/question1.html" class="question-link">Question 1</a>
           <a href="Ex12/question3.html" class="question-link">Question 3</a>
@@ -248,33 +423,45 @@
           <a href="Ex12/question5.html" class="question-link">Question 5</a>
         </div>
       </div>
-      
+    </div>
+    
+    <h2 class="section-title">React Projects</h2>
+    <div class="experiments-grid">
       <!-- React Experiment 13 -->
       <div class="experiment-card react-card">
-        <div class="card-header">React Experiment 13</div>
+        <div class="card-header">
+          <span class="exp-number">13</span>
+          React Project
+        </div>
         <div class="card-body">
           <a href="Ex13/build/index.html" class="question-link">
-            <span class="react-icon">⚛️</span> React Application
+            <span class="icon">⚛️</span> React Application
           </a>
         </div>
       </div>
       
       <!-- React Experiment 14 -->
       <div class="experiment-card react-card">
-        <div class="card-header">React Experiment 14</div>
+        <div class="card-header">
+          <span class="exp-number">14</span>
+          React JS Exercises
+        </div>
         <div class="card-body">
           <a href="Ex14/build/index.html" class="question-link">
-            <span class="react-icon">⚛️</span> React Application
+            <span class="icon">⚛️</span> React Application
           </a>
         </div>
       </div>
       
       <!-- React Experiment 15 -->
       <div class="experiment-card react-card">
-        <div class="card-header">React Experiment 15</div>
+        <div class="card-header">
+          <span class="exp-number">15</span>
+          React JSX
+        </div>
         <div class="card-body">
           <a href="Ex15/build/index.html" class="question-link">
-            <span class="react-icon">⚛️</span> React Application
+            <span class="icon">⚛️</span> React Application
           </a>
         </div>
       </div>
@@ -282,7 +469,7 @@
   </div>
   
   <footer>
-    <p>© 2025 My Web Experiments | Created for Web Development Practice</p>
+    <p>&copy; 2025 Likhith B A | Web Development Portfolio</p>
   </footer>
 </body>
 </html>
