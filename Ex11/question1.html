@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23BCE1098 Dynamic Table & Events</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 50%;
+        margin-bottom: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+      }
+
+      button {
+        background-color: red;
+        color: white;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+        border: none;
+      }
+
+      button:hover {
+        background-color: green;
+      }
+
+      input[type="text"] {
+        padding: 5px;
+        margin: 10px;
+        border: 1px solid black;
+      }
+
+      ul {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let table = document.createElement("table");
+
+        for (let i = 0; i < 3; i++) {
+          let row = table.insertRow();
+          for (let j = 0; j < 3; j++) {
+            let cell = row.insertCell();
+            cell.textContent = `Row ${i + 1}, Col ${j + 1}`;
+          }
+        }
+        document.body.appendChild(table);
+        let button = document.createElement("button");
+        button.textContent = "Hover Me";
+        button.onmouseover = () => (button.style.backgroundColor = "green");
+        button.onmouseout = () => (button.style.backgroundColor = "red");
+        document.body.appendChild(button);
+
+        let textbox = document.createElement("input");
+        textbox.type = "text";
+        textbox.style.backgroundColor = "green";
+        textbox.onfocus = () => (textbox.style.backgroundColor = "yellow");
+        textbox.onchange = () => alert("Hello! You changed the text.");
+        document.body.appendChild(textbox);
+
+        let inputField = document.createElement("input");
+        inputField.type = "text";
+        let addButton = document.createElement("button");
+        addButton.textContent = "Add to List";
+        let ul = document.createElement("ul");
+
+        addButton.ondblclick = function () {
+          if (inputField.value.trim()) {
+            let li = document.createElement("li");
+            li.textContent = inputField.value;
+            ul.appendChild(li);
+            inputField.value = "";
+          }
+        };
+
+        document.body.appendChild(inputField);
+        document.body.appendChild(addButton);
+        document.body.appendChild(ul);
+
+        let keyInput = document.createElement("input");
+        keyInput.type = "text";
+        let keyCounter = document.createElement("span");
+        let count = 0;
+        keyCounter.textContent = `Key Press Count: ${count}`;
+
+        keyInput.onkeydown = function () {
+          count++;
+          keyCounter.textContent = `Key Press Count: ${count}`;
+        };
+
+        document.body.appendChild(keyInput);
+        document.body.appendChild(keyCounter);
+      });
+    </script>
+  </body>
+</html>

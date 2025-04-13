@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>23BCE1098 LabourCost</title>
+  <script>
+    const ratePerHour = 45;
+    let hoursWorked = parseFloat(prompt("Enter the number of hours worked:"));
+    let costOfMaterials = parseFloat(prompt("Enter the cost of materials:"));
+    if (isNaN(hoursWorked) || isNaN(costOfMaterials) || hoursWorked < 0 || costOfMaterials < 0) {
+      alert("Please enter valid positive numbers for hours worked and material cost.");
+    } else {
+      let labourCost = ratePerHour * hoursWorked;
+      let totalCharge = labourCost + costOfMaterials;
+      alert(`Labour Cost: Rs. ${labourCost.toFixed(2)}\nTotal Charge: Rs. ${totalCharge.toFixed(2)}`);
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>

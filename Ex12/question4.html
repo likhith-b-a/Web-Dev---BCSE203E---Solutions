@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23BCE1098 Charts</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      .chart-container {
+        width: 800px;
+        margin: 20px auto;
+      }
+      .box{
+        display: flex;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dynamic Charts using Plotly.js</h1>
+    <div class="box">
+      <div id="barChart" class="chart-container"></div>
+      <div id="lineChart" class="chart-container"></div>
+      <div id="pieChart" class="chart-container"></div>
+      <div id="donutChart" class="chart-container"></div>
+    </div>
+    <script>
+      function createCharts() {
+        let xData = ["A", "B", "C", "D", "E"];
+        let yData = [20, 14, 23, 25, 18];
+        Plotly.newPlot(
+          "barChart",
+          [
+            {
+              x: xData,
+              y: yData,
+              type: "bar",
+              marker: { color: ["red", "blue", "green", "orange", "purple"] },
+            },
+          ],
+          {
+            title: "Bar Chart",
+            xaxis: { title: "Categories" },
+            yaxis: { title: "Values" },
+          }
+        );
+        Plotly.newPlot(
+          "lineChart",
+          [
+            {
+              x: xData,
+              y: yData,
+              type: "scatter",
+              mode: "lines+markers",
+              marker: { color: "blue" },
+            },
+          ],
+          {
+            title: "Line Chart",
+            xaxis: { title: "Categories" },
+            yaxis: { title: "Values" },
+          }
+        );
+        Plotly.newPlot(
+          "pieChart",
+          [
+            {
+              labels: xData,
+              values: yData,
+              type: "pie",
+            },
+          ],
+          { title: "Pie Chart" }
+        );
+        Plotly.newPlot(
+          "donutChart",
+          [
+            {
+              labels: xData,
+              values: yData,
+              type: "pie",
+              hole: 0.4,
+            },
+          ],
+          { title: "Donut Chart" }
+        );
+      }
+      createCharts();
+    </script>
+  </body>
+</html>

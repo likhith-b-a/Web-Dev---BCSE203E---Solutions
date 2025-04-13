@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>23BCE1098 Product Feedback</title>
+</head>
+<body>
+  <form oninput="total.value = parseInt(slider1.value) + parseInt(slider2.value) + parseInt(slider3.value)">
+
+    <hr>
+    <label for="slider1">Quality:</label>&emsp;
+    <output for="slider1" name="output1"></output><br><br>
+    <p>
+      &emsp;&emsp;&emsp;&emsp;&emsp; 0
+      <input 
+        type="range" 
+        id="slider1" 
+        name="slider1" 
+        min="0"
+        max="10" 
+        oninput="output1.value = parseInt(slider1.value)"
+      > 
+      10
+    </p>
+
+    <hr>
+    <label for="slider2">Usability:</label>&emsp;
+    <output for="slider2" name="output2"></output><br><br>
+    <p>
+      &emsp;&emsp;&emsp;&emsp;&emsp; 0
+      <input 
+        type="range" 
+        id="slider2" 
+        name="slider2" 
+        min="0"
+        max="10" 
+        oninput="output2.value = parseInt(slider2.value)"
+      > 
+      10
+    </p>
+
+    <hr>
+    <label for="slider3">Design:</label>&emsp;
+    <output for="slider3" name="output3"></output><br><br>
+    <p>
+      &emsp;&emsp;&emsp;&emsp;&emsp; 0
+      <input 
+        type="range" 
+        id="slider3" 
+        name="slider3" 
+        min="0"
+        max="10" 
+        oninput="output3.value = parseInt(slider3.value)"
+      > 
+      10
+    </p>
+
+    <hr>
+    <label for="total">Total Score:</label>
+    <output id="total" name="total"></output>
+    <br><br>
+
+  </form>
+</body>
+
+</html>

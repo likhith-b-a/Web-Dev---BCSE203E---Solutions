@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE1098 Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        .myphto {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid #4CAF50; /* Your favorite color */
+            transition: transform 0.3s;
+        }
+
+        .myphto:hover {
+            transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+
+        figcaption {
+            font-size: 30px;
+            margin-top: 10px;
+            animation: textEffect 3s infinite;
+        }
+
+        @keyframes textEffect {
+            0% {
+                color: #000;
+                font-size: 35px;
+            }
+            50% {
+                color: #4CAF50; /* Your favorite color */
+                font-size: 40px;
+            }
+            100% {
+                color: #000;
+                font-size: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <figure>
+        <img src="image.png" alt="Favorite Singer" class="myphto" title="My Favorite Singer">
+        <figcaption>Radio France</figcaption>
+    </figure>
+</body>
+</html>

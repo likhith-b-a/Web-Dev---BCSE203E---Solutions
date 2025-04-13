@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23BCE1098 Analog Clock</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      canvas {
+        border: 2px solid black;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Analog Clock using JavaScript Canvas</h2>
+    <canvas id="clockCanvas" width="400" height="400"></canvas>
+    <script>
+      const canvas = document.getElementById("clockCanvas");
+      const ctx = canvas.getContext("2d");
+      function drawClock() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.arc(200, 200, 150, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.arc(200, 200, 5, 0, Math.PI * 2);
+        ctx.fill();
+        for (let i = 0; i < 12; i++) {
+          let angle = (i * Math.PI) / 6;
+          let x1 = 200 + Math.cos(angle) * 130;
+          let y1 = 200 + Math.sin(angle) * 130;
+          let x2 = 200 + Math.cos(angle) * 145;
+          let y2 = 200 + Math.sin(angle) * 145;
+          ctx.beginPath();
+          ctx.moveTo(x1, y1);
+          ctx.lineTo(x2, y2);
+          ctx.stroke();
+        }
+        let now = new Date();
+        let secAngle = (now.getSeconds() / 60) * 2 * Math.PI - Math.PI / 2;
+        let minAngle = (now.getMinutes() / 60) * 2 * Math.PI - Math.PI / 2;
+        let hourAngle =
+          ((now.getHours() % 12) / 12) * 2 * Math.PI - Math.PI / 2;
+        drawHand(hourAngle, 60, 6);
+        drawHand(minAngle, 90, 4);
+        drawHand(secAngle, 110, 2, "red");
+        requestAnimationFrame(drawClock);
+      }
+      function drawHand(angle, length, width, color = "black") {
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width;
+        ctx.beginPath();
+        ctx.moveTo(200, 200);
+        ctx.lineTo(
+          200 + Math.cos(angle) * length,
+          200 + Math.sin(angle) * length
+        );
+        ctx.stroke();
+      }
+      drawClock();
+    </script>
+  </body>
+</html>

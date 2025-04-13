@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23BCE1098 Z-Index</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+      }
+      .box {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        text-align: center;
+        line-height: 150px;
+        font-size: 20px;
+        color: white;
+        font-weight: bold;
+      }
+      #box1 {
+        background: red;
+        top: 50px;
+        left: 50px;
+        z-index: 1;
+      }
+      #box2 {
+        background: blue;
+        top: 80px;
+        left: 80px;
+        z-index: 2;
+      }
+      #box3 {
+        background: green;
+        top: 110px;
+        left: 110px;
+        z-index: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Dynamic Z-Index Manipulation</h2>
+    <div class="container">
+      <div id="box1" class="box">Box 1</div>
+      <div id="box2" class="box">Box 2</div>
+      <div id="box3" class="box">Box 3</div>
+    </div>
+    <div>
+      <label
+        >Box:
+        <select id="boxSelect">
+          <option value="box1">Box 1</option>
+          <option value="box2">Box 2</option>
+          <option value="box3">Box 3</option>
+        </select>
+      </label>
+      <label
+        >Z-Index:
+        <input type="number" id="zIndexInput" value="1" min="1" max="10"
+      /></label>
+      <button onclick="changeZIndex()">Update Z-Index</button>
+    </div>
+    <p id="zIndexDisplay"></p>
+    <script>
+      function updateDisplay() {
+        document.getElementById("zIndexDisplay").innerText = `Box 1: ${
+          document.getElementById("box1").style.zIndex
+        }, 
+            Box 2: ${document.getElementById("box2").style.zIndex}, 
+            Box 3: ${document.getElementById("box3").style.zIndex}`;
+      }
+      function changeZIndex() {
+        let selectedBox = document.getElementById("boxSelect").value;
+        let newZIndex = document.getElementById("zIndexInput").value;
+        document.getElementById(selectedBox).style.zIndex = newZIndex;
+        updateDisplay();
+      }
+      updateDisplay();
+    </script>
+  </body>
+</html>

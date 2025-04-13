@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airline Reservation System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    table {
+      width: 50%;
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Airline Reservation System</h2>
+  <label for="name">Enter your name:</label>
+  <input type="text" id="name" required>
+  <button onclick="reserveSeat(1)">First-Class</button>
+  <button onclick="reserveSeat(2)">Economy</button>
+  <p id="boardingPass"></p>
+
+  <h3>Passenger Details</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Seat Number</th>
+        <th>Class</th>
+      </tr>
+    </thead>
+    <tbody id="passengerTable">
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

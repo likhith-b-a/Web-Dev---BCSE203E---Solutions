@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>23BCE1098 Resume Form</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend><font color="red"><b>Personal Details</b></font></legend>
+            <label for="name">Name</label> :
+            <input type="text" id="name" name="name"><br><br>
+            <label for="password">Password</label> :
+            <input type="password" id="password" name="password"><br><br>
+            <label for="email">E-mail id</label> :
+            <input type="email" id="email" name="email"><br><br>
+            <label for="gender">Gender</label> :
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br><br>
+            <label for="dob">DOB</label> :
+            <input type="date" id="dob" name="dob"><br><br>
+            <label for="mobile">Mobile</label> :
+            <input type="tel" id="mobile" name="mobile">
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><font color="red"><b>Educational Qualification</b></font></legend>
+            <label for="degree">Degree</label> :
+            <select id="degree" name="degree">
+              <option value="">-- Select Group --</option>
+                <optgroup label="UG">
+                    <option value="be">BE</option>
+                    <option value="btech">BTech</option>
+                    <option value="bsc">BSc</option>
+                    <option value="ba">BA</option>
+                    <option value="bca">BCA</option>
+                    <option value="bba">BBA</option>
+                    <option value="others">Others</option>
+                </optgroup>
+                <optgroup label="PG">
+                    <option value="me">ME</option>
+                    <option value="mtech">MTech</option>
+                    <option value="msc">MSc</option>
+                    <option value="ma">MA</option>
+                    <option value="mca">MCA</option>
+                    <option value="mba">MBA</option>
+                    <option value="others">Others</option>
+                </optgroup>
+                <optgroup label="PhD">
+                    <option value="engineering">Engineering</option>
+                    <option value="science">Science</option>
+                    <option value="management">Management</option>
+                    <option value="others">Others</option>
+                </optgroup>
+            </select>
+            <label for="engineering">Engineering</label> :
+            <select id="engineering" name="engineering">
+                <option value="">-- Select Group --</option>
+                <option value="cse">CSE</option>
+                <option value="ece">ECE</option>
+                <option value="eee">EEE</option>
+                <option value="civil">CIVIL</option>
+                <option value="mech">MECH</option>
+            </select><br><br>
+          </fieldset>
+          <br><br>
+          <label for="hobbies">Hobbies</label> :
+          <input type="checkbox" id="chess" name="hobbies" value="playing_chess">
+          <label for="chess">Playing chess</label>
+          <input type="checkbox" id="reading" name="hobbies" value="reading_books">
+          <label for="reading">Reading Books</label><br><br>
+          <label for="color">Favourite Color</label> :
+          <input type="color" id="color" name="color">
+          <br><br>
+        <fieldset>
+            <legend><font color="red"><b>Address</b></font></legend>
+            <textarea id="address" name="address" rows="5" cols="50"></textarea><br><br>
+            <label for="resume">Attach Resume</label> :
+            <input type="file" id="resume" name="resume" ><br><br>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>

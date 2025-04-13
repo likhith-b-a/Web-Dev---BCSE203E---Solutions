@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Receipt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-list {
+            text-align: left;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Order Receipt</h2>
+        <p><strong>Name:</strong> <span id="customer-name"></span></p>
+        <p><strong>Phone:</strong> <span id="customer-phone"></span></p>
+        <p><strong>Email:</strong> <span id="customer-email"></span></p>
+
+        <h3>Products Ordered:</h3>
+        <div class="product-list" id="product-list"></div>
+
+        <h3>Total Cost: $<span id="total-cost">0</span></h3>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let order = JSON.parse(localStorage.getItem("order"));
+
+            if (order) {
+                document.getElementById("customer-name").textContent = order.name;
+                document.getElementById("customer-phone").textContent = order.phone;
+                document.getElementById("customer-email").textContent = order.email;
+
+                let productList = document.getElementById("product-list");
+                let totalCost = 0;
+
+                order.products.forEach(product => {
+                    let item = document.createElement("p");
+                    let cost = product.price * product.quantity;
+                    item.textContent = `${product.name} - ${product.quantity}kg @ $${product.price}/kg = $${cost}`;
+                    productList.appendChild(item);
+                    totalCost += cost;
+                });
+
+                document.getElementById("total-cost").textContent = totalCost;
+            }
+        });
+    </script>
+
+</body>
+</html>

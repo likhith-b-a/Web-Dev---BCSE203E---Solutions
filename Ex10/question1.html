@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>23BCE1098</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    table {
+      width: 50%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    input,
+    button {
+      margin: 5px;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Hospital Patient Data</h2>
+
+  <h3>(i) Sorted Patient Data (Descending by Age)</h3>
+  <button onclick="displaySortedPatients()">Show Sorted Data</button>
+  <table id="patientTable">
+    <thead>
+      <tr>
+        <th>P-Id</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data will be inserted here dynamically -->
+    </tbody>
+  </table>
+
+  <h3>(ii) Check if a Patient ID Exists</h3>
+  <input type="number" id="searchId" placeholder="Enter P-Id">
+  <button onclick="checkPatient()">Check</button>
+  <p id="checkResult"></p>
+
+  <h3>(iii) Filter Patients by Age Range</h3>
+  <input type="number" id="minAge" placeholder="Min Age">
+  <input type="number" id="maxAge" placeholder="Max Age">
+  <button onclick="filterPatients()">Filter</button>
+  <table id="filteredTable">
+    <thead>
+      <tr>
+        <th>P-Id</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Filtered data will be inserted here dynamically -->
+    </tbody>
+  </table>
+
+  <script src="question1.js"></script>
+
+</body>
+
+</html>

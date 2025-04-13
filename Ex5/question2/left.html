@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="audio">
+    <h2>Audio</h2>
+    <audio controls>
+      <source src="audio.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <div id="video">
+    <h2>Video</h2>
+    <video controls>
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support the video element.
+    </video>
+  </div>
+
+  <div>
+    <canvas id="laptopCanvas" width="400" height="300"></canvas>
+  </div>
+<script>
+  const canvas = document.getElementById('laptopCanvas');
+  const ctx = canvas.getContext('2d');
+
+  const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+  gradient.addColorStop(0, '#6a0d00');
+  gradient.addColorStop(1, '#ff0000');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = '#d3d3d3';
+  ctx.fillRect(100, 230, 200, 15);
+
+  ctx.fillStyle = '#000000';
+  ctx.fillRect(110, 50, 180, 150);
+
+  ctx.lineWidth = 5;
+  ctx.strokeStyle = '#4d4d4d';
+  ctx.strokeRect(110, 50, 180, 150);
+
+  ctx.beginPath();
+  ctx.arc(200, 125, 50, 0, 2 * Math.PI);
+  ctx.fillStyle = 'rgba(255, 255, 0, 0.2)';
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(200, 125, 40, 0, 2 * Math.PI);
+  ctx.fillStyle = 'rgba(255, 255, 0, 0.4)';
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(200, 125, 30, 0, 2 * Math.PI);
+  ctx.fillStyle = 'rgba(255, 255, 0, 0.6)';
+  ctx.fill();
+
+  ctx.fillStyle = '#a9a9a9';
+  ctx.fillRect(180, 215, 40, 15);
+</script>
+
+</body>
+</html>

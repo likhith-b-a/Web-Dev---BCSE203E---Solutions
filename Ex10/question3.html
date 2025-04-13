@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE1098</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a0a98f;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: #79856f;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            width: 80%;
+        }
+        .products {
+            text-align: left;
+            margin: 10px auto;
+            width: 80%;
+        }
+        .product-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .submit-btn {
+            background-color: #b5835a;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Grocery Order Form</h2>
+        
+        <input type="text" id="name" placeholder="Customer Name">
+        <input type="text" id="phone" placeholder="Phone Number">
+        <input type="email" id="email" placeholder="Email">
+
+        <h3>Products</h3>
+        <div class="products">
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/OIP.hVjhVt5EiigNSJr1QK93AAHaIJ?rs=1&pid=ImgDetMain" width="30">
+                <label>Apple $10</label>
+                <input type="checkbox" class="product" value="Apple,10">
+                <input type="number" class="quantity" min="1" max="10" placeholder="kg" disabled>
+            </div>
+
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/OIP.emjzYKViT1SKMALrVmqujQHaE8?rs=1&pid=ImgDetMain" width="30">
+                <label>Banana $5</label>
+                <input type="checkbox" class="product" value="Banana,5">
+                <input type="number" class="quantity" min="1" max="10" placeholder="kg" disabled>
+            </div>
+
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/OIP.MVtMfAGHDYMBIAXKLMk-zAHaF4?rs=1&pid=ImgDetMain" width="30">
+                <label>Avocado $7</label>
+                <input type="checkbox" class="product" value="Avocado,7">
+                <input type="number" class="quantity" min="1" max="10" placeholder="kg" disabled>
+            </div>
+        </div>
+
+        <button class="submit-btn" onclick="submitOrder()">SUBMIT</button>
+    </div>
+
+    <script src="question3.js"></script>
+
+</body>
+</html>

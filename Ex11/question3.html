@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23BCE1098 JavaScript Form Validation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .container {
+        border: 1px solid black;
+        padding: 20px;
+        width: 600px;
+      }
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 5px;
+        margin-top: 5px;
+      }
+      .error {
+        color: red;
+        font-size: 0.9em;
+      }
+      #time {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border: 1px solid black;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Test JavaScript Form Validation</h2>
+      <div id="time"></div>
+      <form id="validationForm">
+        <label>Name* <input type="text" name="name" id="name" /></label>
+        <label>Address <textarea id="address"></textarea></label>
+        <label>Zip Code* <input type="text" id="zip" /></label>
+        <label
+          >Country*
+          <select id="country">
+            <option value="">Please select...</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+          </select></label
+        >
+        <label
+          >Gender* <input type="radio" name="gender" value="Male" /> Male
+          <input type="radio" name="gender" value="Female" /> Female</label
+        >
+        <label
+          >Preferences*
+          <input type="checkbox" name="preferences" value="Red" /> Red
+          <input type="checkbox" name="preferences" value="Green" /> Green
+          <input type="checkbox" name="preferences" value="Blue" /> Blue</label
+        >
+        <label>Phone* <input type="text" id="phone" /></label>
+        <label>Email* <input type="text" id="email" /></label>
+        <label
+          >Password (8-15 characters)* <input type="password" id="password"
+        /></label>
+        <label
+          >Verify Password* <input type="password" id="verifyPassword"
+        /></label>
+        <label>PAN No* <input type="text" id="pan" /></label>
+        <button type="submit">SEND</button>
+        <button type="reset">CLEAR</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

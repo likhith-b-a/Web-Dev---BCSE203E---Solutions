@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('background-image.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #333;
+}
+
+.container {
+  padding: 20px;
+}
+
+.rainbow {
+  margin: 3rem;
+  width: fit-content;
+  font-size: 2em;
+  font-weight: bold;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rainbowEffect 3s linear infinite;
+}
+
+@keyframes rainbowEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.description {
+  column-count: 2;
+  column-gap: 30px;
+  line-height: 30pt;
+  text-align: justify;
+  margin: 20px;
+}
+
+.ball {
+  fill: red;
+  stroke: black;
+  stroke-width: 2;
+  animation: play 2s ease-in-out infinite;
+}
+.dog {
+  fill: #8B4513;
+}
+.dog-eye {
+  fill: white;
+}
+.dog-pupil {
+  fill: black;
+}
+.dog-tongue {
+  fill: #FF6347;
+}
+@keyframes play {
+  0% {
+      transform: translate(0, 0) rotate(0) scale(1);
+  }
+  25% {
+      transform: translate(50px, 50px) rotate(45deg) scale(1.2);
+  }
+  50% {
+      transform: translate(100px, 0) rotate(90deg) scale(1);
+  }
+  75% {
+      transform: translate(50px, -50px) rotate(135deg) scale(0.8);
+  }
+  100% {
+      transform: translate(0, 0) rotate(180deg) scale(1);
+  }
+}
+#ball-group {
+  animation: play 2s ease-in-out infinite;
+}
