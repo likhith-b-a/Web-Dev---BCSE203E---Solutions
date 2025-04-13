@@ -1,5 +1,22 @@
 WebD submission Template.docx
 Submissions
-Ex13
-Ex14
-Ex15
+node_modules/
+
+Ex13/node_modules/
+Ex13/src
+Ex13/public
+Ex13/package.json
+Ex13/package-lock.json
+
+Ex14/node_modules/
+Ex14/src
+Ex14/public
+Ex14/package.json
+Ex14/package-lock.json
+
+Ex15/node_modules/
+Ex15/src
+Ex15/public
+Ex15/package.json
+Ex15/package-lock.json
+

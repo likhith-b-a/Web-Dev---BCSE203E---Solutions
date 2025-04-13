@@ -1,20 +1,288 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Experiments</title>
+  <title>My Web Experiments</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      font-weight: normal;
+      opacity: 0.9;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    .experiments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .experiment-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .experiment-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    
+    .card-header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    
+    .react-card .card-header {
+      background-color: #61DAFB;
+      color: #282c34;
+    }
+    
+    .card-body {
+      padding: 1rem;
+    }
+    
+    .question-link {
+      display: block;
+      padding: 0.7rem 1rem;
+      margin: 0.5rem 0;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      color: #333;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+    
+    .question-link:hover {
+      background-color: #e0e0e0;
+    }
+    
+    .react-card .question-link {
+      background-color: #f0f8ff;
+    }
+    
+    .react-card .question-link:hover {
+      background-color: #e0f0ff;
+    }
+    
+    .react-icon {
+      display: inline-block;
+      margin-right: 5px;
+      color: #61DAFB;
+      font-weight: bold;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      background-color: #f0f0f0;
+      color: #666;
+    }
+    
+    @media (max-width: 768px) {
+      .experiments-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>My Web Experiments</h1>
-  <ul>
-    <li><a href="Ex1/Task1/home.html">Experiment 1</a></li>
-    <li><a href="Ex1/Task2/greeting.html">Experiment 1</a></li>
-    <li><a href="Ex2/List.html">Experiment 2</a></li>
-    <li><a href="Ex2/Table1.html">Experiment 2</a></li>
-    <li><a href="Ex2/Table2.html">Experiment 2</a></li>
-    <li><a href="Ex2/Table3.html">Experiment 2</a></li>
-    <li><a href="Ex2/Table4.html">Experiment 2</a></li>
-    <li><a href="Ex3/question1.html">Experiment 3</a></li>
-    <li><a href="Ex3/question2.html">Experiment 3</a></li>
-  </ul>
+  <header>
+    <h1>My Web Experiments</h1>
+    <div class="subtitle">A collection of web development exercises and solutions</div>
+  </header>
+  
+  <div class="container">
+    <div class="experiments-grid">
+      <!-- Experiment 1 -->
+      <div class="experiment-card">
+        <div class="card-header">Experiment 1</div>
+        <div class="card-body">
+          <a href="Ex1/Task1/home.html" class="question-link">Task 1</a>
+          <a href="Ex1/Task2/greeting.html" class="question-link">Task 2</a>
+        </div>
+      </div>
+      
+      <!-- Experiment 2 -->
+      <div class="experiment-card">
+        <div class="card-header">Experiment 2</div>
+        <div class="card-body">
+          <a href="Ex2/List.html" class="question-link">List</a>
+          <a href="Ex2/Table1.html" class="question-link">Table 1</a>
+          <a href="Ex2/Table2.html" class="question-link">Table 2</a>
+          <a href="Ex2/Table3.html" class="question-link">Table 3</a>
+          <a href="Ex2/Table4.html" class="question-link">Table 4</a>
+        </div>
+      </div>
+      
+      <!-- Experiment 3 -->
+      <div class="experiment-card">
+        <div class="card-header">Experiment 3</div>
+        <div class="card-body">
+          <a href="Ex3/question1.html" class="question-link">Question 1</a>
+          <a href="Ex3/question2.html" class="question-link">Question 2</a>
+        </div>
+      </div>
+      
+      <!-- Experiment 4 -->
+      <div class="experiment-card">
+        <div class="card-header">Experiment 4</div>
+        <div class="card-body">
+          <a href="Ex4/question1.html" class="question-link">Question 1</a>
+          <a href="Ex4/question2.html" class="question-link">Question 2</a>
+          <a href="Ex4/question3.html" class="question-link">Question 3</a>
+        </div>
+      </div>
+      
+      <!-- Experiment 5 -->
+      <div class="experiment-card">
+        <div class="card-header">Experiment 5</div>
+        <div class="card-body">
+          <a href="Ex5/question1/question1.html" class="question-link">Question 1</a>
+          <a href="Ex5/question2/question2.html" class="question-link">Question 2</a>
+        </div>
+      </div>
+      
+      <!-- Experiment 6 -->
+      <div class="experiment-card">
+        <div class="card-header">Experiment 6</div>
+        <div class="card-body">
+          <a href="Ex6/question1.html" class="question-link">Question 1</a>
+          <a href="Ex6/question2.html" class="question-link">Question 2</a>
+          <a href="Ex6/question3.html" class="question-link">Question 3</a>
+        </div>
+      </div>
+      
+      <!-- Experiment 7 -->
+      <div class="experiment-card">
+        <div class="card-header">Experiment 7</div>
+        <div class="card-body">
+          <a href="Ex7/question1.html" class="question-link">Question 1</a>
+          <a href="Ex7/question2.html" class="question-link">Question 2</a>
+        </div>
+      </div>
+      
+      <!-- Experiment 8 -->
+      <div class="experiment-card">
+        <div class="card-header">Experiment 8</div>
+        <div class="card-body">
+          <a href="Ex8/Question1.html" class="question-link">Question 1</a>
+          <a href="Ex8/Question2.html" class="question-link">Question 2</a>
+          <a href="Ex8/Question3.html" class="question-link">Question 3</a>
+          <a href="Ex8/Question4.html" class="question-link">Question 4</a>
+          <a href="Ex8/Question5.html" class="question-link">Question 5</a>
+          <a href="Ex8/Question6.html" class="question-link">Question 6</a>
+        </div>
+      </div>
+      
+      <!-- Experiment 9 -->
+      <div class="experiment-card">
+        <div class="card-header">Experiment 9</div>
+        <div class="card-body">
+          <a href="Ex9/question1.html" class="question-link">Question 1</a>
+          <a href="Ex9/question2.html" class="question-link">Question 2</a>
+          <a href="Ex9/question3.html" class="question-link">Question 3</a>
+        </div>
+      </div>
+      
+      <!-- Experiment 10 -->
+      <div class="experiment-card">
+        <div class="card-header">Experiment 10</div>
+        <div class="card-body">
+          <a href="Ex10/question1.html" class="question-link">Question 1</a>
+          <a href="Ex10/question2.html" class="question-link">Question 2</a>
+          <a href="Ex10/question3.html" class="question-link">Question 3</a>
+        </div>
+      </div>
+      
+      <!-- Experiment 11 -->
+      <div class="experiment-card">
+        <div class="card-header">Experiment 11</div>
+        <div class="card-body">
+          <a href="Ex11/question1.html" class="question-link">Question 1</a>
+          <a href="Ex11/question2.html" class="question-link">Question 2</a>
+          <a href="Ex11/question3.html" class="question-link">Question 3</a>
+        </div>
+      </div>
+      
+      <!-- Experiment 12 -->
+      <div class="experiment-card">
+        <div class="card-header">Experiment 12</div>
+        <div class="card-body">
+          <a href="Ex12/question1.html" class="question-link">Question 1</a>
+          <a href="Ex12/question3.html" class="question-link">Question 3</a>
+          <a href="Ex12/question4.html" class="question-link">Question 4</a>
+          <a href="Ex12/question5.html" class="question-link">Question 5</a>
+        </div>
+      </div>
+      
+      <!-- React Experiment 13 -->
+      <div class="experiment-card react-card">
+        <div class="card-header">React Experiment 13</div>
+        <div class="card-body">
+          <a href="Ex13/build/index.html" class="question-link">
+            <span class="react-icon">⚛️</span> React Application
+          </a>
+        </div>
+      </div>
+      
+      <!-- React Experiment 14 -->
+      <div class="experiment-card react-card">
+        <div class="card-header">React Experiment 14</div>
+        <div class="card-body">
+          <a href="Ex14/build/index.html" class="question-link">
+            <span class="react-icon">⚛️</span> React Application
+          </a>
+        </div>
+      </div>
+      
+      <!-- React Experiment 15 -->
+      <div class="experiment-card react-card">
+        <div class="card-header">React Experiment 15</div>
+        <div class="card-body">
+          <a href="Ex15/build/index.html" class="question-link">
+            <span class="react-icon">⚛️</span> React Application
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <p>© 2025 My Web Experiments | Created for Web Development Practice</p>
+  </footer>
 </body>
 </html>
